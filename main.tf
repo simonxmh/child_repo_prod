@@ -8,7 +8,7 @@ terraform {
 
 provider "tfe" {
   hostname = var.hostname
-  token = var.token
+  token = var.TF_TOKEN_simontest_ngrok_io
 }
 
 resource "tfe_workspace" "child" {
