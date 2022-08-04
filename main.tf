@@ -8,6 +8,7 @@ terraform {
 
 provider "tfe" {
   hostname = var.hostname
+  token = var.token
 }
 
 resource "tfe_workspace" "child" {
