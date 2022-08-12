@@ -11,6 +11,7 @@ provider "tfe" {
 }
 
 resource "tfe_workspace" "child" {
+  count = 5
   organization = var.organization
-  name = "child"
+  name = "child=${count.index}"
 }
