@@ -17,13 +17,14 @@ resource "tfe_workspace" "child" {
 
   lifecycle {
     postcondition {
-      condition     = self.organization == "my org"
-      error_message = "org name failure"
+      condition     = self.organization == var.organization
+      error_message = "org name failed"
     }
 
+
     postcondition {
-      condition     = self.organization == "my org 2222"
-      error_message = "second org name failure"
+      condition     = self.organization == var.organization
+      error_message = "org name failed another time"
     }
   }
 }
