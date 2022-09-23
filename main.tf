@@ -32,10 +32,14 @@ resource "tfe_variable" "test-var" {
   description = "This allows the build agent to call back to TFC when executing plans and applies"
 
   lifecycle {
-    postcondition {
+    precondition {
       condition = self.value == "test_Var"
       error_message = "org name failed"
     }
+    # postcondition {
+    #   condition = self.value == "test_Var"
+    #   error_message = "org name failed"
+    # }
   }
 }
 
