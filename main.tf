@@ -23,7 +23,7 @@ resource "tfe_workspace" "child" {
 
 
     postcondition {
-      condition     = self.organization == var.organization
+      condition     = var.random_var == "test_Var" 
       error_message = "org name failed another time"
     }
   }
