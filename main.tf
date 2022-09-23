@@ -20,11 +20,21 @@ resource "tfe_workspace" "child" {
       condition     = self.organization == var.organization 
       error_message = "org name failed"
     }
+  }
+}
 
 
+resource "tfe_variable" "test-var" {
+  key = "test_var"
+  value = var.random_var
+  category = "env"
+  workspace_id = tfe_workspace.child.id
+  description = "This allows the build agent to call back to TFC when executing plans and applies"
+
+  lifecycle {
     postcondition {
-      condition     = var.random_var == "test_Var" 
-      error_message = "org name failed another time"
+      condition = self.value == "test_Var"
+      error_message = "org name failed"
     }
   }
 }
