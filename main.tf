@@ -33,13 +33,13 @@ resource "tfe_variable" "test-var" {
 
   lifecycle {
     precondition {
+      condition = tfe_workspace.child[0].name == "child-0"
+      error_message = "org name failed"
+    }
+    postcondition {
       condition = self.value == "test_Var"
       error_message = "org name failed"
     }
-    # postcondition {
-    #   condition = self.value == "test_Var"
-    #   error_message = "org name failed"
-    # }
   }
 }
 
