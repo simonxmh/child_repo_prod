@@ -17,7 +17,7 @@ resource "tfe_workspace" "child" {
 
   lifecycle {
     postcondition {
-      condition     = self.organization == "Shouldfail"
+      condition     = self.organization == var.organization 
       error_message = "org name failed"
     }
 
