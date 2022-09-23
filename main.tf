@@ -28,7 +28,7 @@ resource "tfe_variable" "test-var" {
   key = "test_var"
   value = var.random_var
   category = "env"
-  workspace_id = tfe_workspace.child.id
+  workspace_id = tfe_workspace.child[0].id
   description = "This allows the build agent to call back to TFC when executing plans and applies"
 
   lifecycle {
