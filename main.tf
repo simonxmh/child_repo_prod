@@ -35,10 +35,6 @@ resource "tfe_variable" "test-var" {
   description = "This allows the build agent to call back to TFC when executing plans and applies"
 
   lifecycle {
-    precondition {
-      condition = tfe_workspace.child[0].name == "child-0"
-      error_message = "workspace child name precondition failed"
-    }
     postcondition {
       condition = self.value == "test_Var"
       error_message = "var name postcondition failed"
