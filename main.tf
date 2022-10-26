@@ -11,9 +11,9 @@ provider "tfe" {
 }
 
 resource "tfe_workspace" "child" {
-  count        = 9
+  count        = 10
   organization = var.organization
-  name         = "child-${count.index}"
+  name         = "child-${random_id.child_id}"
 
   lifecycle {
     postcondition {
@@ -23,6 +23,9 @@ resource "tfe_workspace" "child" {
   }
 }
 
+resource "random_id" "child_id" {
+  byte_length = 8
+}
 
 resource "tfe_variable" "test-var" {
   key = "test_var"
@@ -42,4 +45,3 @@ resource "tfe_variable" "test-var" {
     }
   }
 }
-
