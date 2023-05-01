@@ -41,3 +41,8 @@ resource "tfe_variable" "test-var" {
     }
   }
 }
+
+module "empty" {
+  source  = "dasmeta/empty/null"
+  version = "1.0.0"
+}
