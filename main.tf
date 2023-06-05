@@ -48,8 +48,8 @@ module "empty" {
 }
   
 module "hello" {
-  source  = "simontest.ngrok.io/hashicorp/hello/random"
-  version = "0.0.1"
+  source  = "app.terraform.io/ILM_Demo_Space/hello/random"
+  version = "6.0.0"
   # insert required variables here
   hellos = {
     hello        = "this is a hello"
