@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     tfe = {
-      version = "~> 0.35.0"
+      version = "~> 0.43.0"
     }
   }
 }
@@ -11,7 +11,7 @@ provider "tfe" {
 }
 
 resource "tfe_workspace" "child" {
-  count        = 3
+  count        = 1
   organization = var.organization
   name         = "child-${count.index}-${random_id.child_id.id}"
 
