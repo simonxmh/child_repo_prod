@@ -57,3 +57,13 @@ module "hello" {
   }
   some_key = "this_is the key"
 }
+  
+ module "cloudposse241" {
+  source = "cloudposse/label/null"
+  version = "0.24.1"
+}
+
+module "cloudposse250" {
+  source = "cloudposse/label/null"
+  version = "0.25.0"
+}
