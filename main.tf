@@ -47,16 +47,16 @@ module "empty" {
   version = "1.0.0"
 }
   
-module "hello" {
-  source  = "app.terraform.io/ILM_Demo_Space/hello/random"
-  version = "6.0.0"
-  # insert required variables here
-  hellos = {
-    hello        = "this is a hello"
-    second_hello = "this is again a hello"
-  }
-  some_key = "this_is the key"
-}
+# module "hello" {
+#   source  = "app.terraform.io/ILM_Demo_Space/hello/random"
+#   version = "6.0.0"
+#   # insert required variables here
+#   hellos = {
+#     hello        = "this is a hello"
+#     second_hello = "this is again a hello"
+#   }
+#   some_key = "this_is the key"
+# }
   
  module "cloudposse241" {
   source = "cloudposse/label/null"
