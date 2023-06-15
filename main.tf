@@ -46,10 +46,23 @@ module "empty" {
   source  = "dasmeta/empty/null"
   version = "1.0.0"
 }
-  
+
+# prod org
 # module "hello" {
 #   source  = "app.terraform.io/ILM_Demo_Space/hello/random"
 #   version = "6.0.0"
+#   # insert required variables here
+#   hellos = {
+#     hello        = "this is a hello"
+#     second_hello = "this is again a hello"
+#   }
+#   some_key = "this_is the key"
+# }
+
+# priv org
+# module "hello" {
+#   source  = "simontest.ngrok.io/hashicorp/hello/random"
+#   version = "0.0.1"
 #   # insert required variables here
 #   hellos = {
 #     hello        = "this is a hello"
