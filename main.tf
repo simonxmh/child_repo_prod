@@ -76,7 +76,7 @@ module "cloudposse241" {
   version = "0.24.1"
 }
 
-module "cloudposse250" {
-  source = "cloudposse/label/null"
-  version = "0.25.0"
-}
+# module "cloudposse250" {
+#  source = "cloudposse/label/null"
+#  version = "0.25.0"
+# }
