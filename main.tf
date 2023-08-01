@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     tfe = {
-      version = "~> 0.43.0"
+      version = "~> 0.46.0"
     }
   }
 }
@@ -48,28 +48,27 @@ resource "tfe_variable" "test-var" {
 # }
 
 # prod org
-# module "hello" {
-#   source  = "app.terraform.io/ILM_Demo_Space/hello/random"
-#   version = "6.0.0"
-#   # insert required variables here
-#   hellos = {
-#     hello        = "this is a hello"
-#     second_hello = "this is again a hello"
-#   }
-#   some_key = "this_is the key"
-# }
+module "hello" {
+  source  = "app.terraform.io/ILM_Demo_Space/hello/random"
+  version = "6.0.0"
+  # insert required variables here
+  hellos = {
+    hello        = "this is a hello"
+    second_hello = "this is again a hello"
+  }
+}
 
 # priv org
- module "hello" {
-   source  = "simontest.ngrok.io/hashicorp/hello/random"
-   version = "0.0.1"
+#  module "hello" {
+#    source  = "simontest.ngrok.io/hashicorp/hello/random"
+#    version = "0.0.1"
 #  insert required variables here
-   hellos = {
-     hello        = "this is a hello"
-     second_hello = "this is again a hello"
-   }
-   some_key = "this_is the key"
- }
+#    hellos = {
+#      hello        = "this is a hello"
+#      second_hello = "this is again a hello"
+#    }
+#    some_key = "this_is the key"
+#  }
 
 module "cloudposse241" {
   source = "cloudposse/label/null"
