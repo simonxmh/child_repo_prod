@@ -56,6 +56,7 @@ module "hello" {
     hello        = "this is a hello"
     second_hello = "this is again a hello"
   }
+  some_key = "this is a key"
 }
 
 # priv org
