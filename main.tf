@@ -74,16 +74,38 @@ module "hello" {
 module "cloudposse241" {
   source = "cloudposse/label/null"
   version = "0.24.1"
+
+  namespace  = "eg"
+  stage      = "staging"
+  name       = "bastion"
+  attributes = ["public"]
+  delimiter  = "-"
+
+  tags = {
+    "BusinessUnit" = "X",
+    "Snapshot"     = "true"
+  }
 }
 
 module "cloudposse250" {
   source = "cloudposse/label/null"
   version = "0.25.0"
+
+  namespace  = "eg"
+  stage      = "dev"
+  name       = "bastion"
+  attributes = ["public"]
+  delimiter  = "-"
+
+  tags = {
+    "BusinessUnit" = "XY",
+    "Snapshot"     = "true"
+  }
 }
 
 module "eg_prod_bastion" {
   source = "cloudposse/label/null"
-  version = "0.24.0"
+  version = "0.24.1"
 
   namespace  = "eg"
   stage      = "prod"
