@@ -42,10 +42,10 @@ resource "tfe_variable" "test-var" {
   }
 }
 
-# module "empty" {
-#  source  = "dasmeta/empty/null"
-#  version = "1.0.0"
-# }
+module "empty" {
+  source  = "dasmeta/empty/null"
+  version = "1.0.0"
+}
 
 # prod org
 module "hello" {
@@ -76,7 +76,28 @@ module "cloudposse241" {
   version = "0.24.1"
 }
 
-# module "cloudposse250" {
-#  source = "cloudposse/label/null"
-#  version = "0.25.0"
-# }
+module "cloudposse250" {
+  source = "cloudposse/label/null"
+  version = "0.25.0"
+}
+
+module "eg_prod_bastion" {
+  source = "cloudposse/label/null"
+  version = "0.25.0"
+
+  namespace  = "eg"
+  stage      = "prod"
+  name       = "bastion"
+  attributes = ["public"]
+  delimiter  = "-"
+
+  tags = {
+    "BusinessUnit" = "XYZ",
+    "Snapshot"     = "true"
+  }
+}
+
+module "uuid" {
+  source  = "Invicton-Labs/uuid/random"
+  version = "0.2.0"
+}
