@@ -83,7 +83,7 @@ module "cloudposse250" {
 
 module "eg_prod_bastion" {
   source = "cloudposse/label/null"
-  version = "0.25.0"
+  version = "0.24.0"
 
   namespace  = "eg"
   stage      = "prod"
